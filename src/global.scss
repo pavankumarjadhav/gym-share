@@ -31,7 +31,9 @@
  * For more info, please see:
  * https://ionicframework.com/docs/theming/dark-mode
  */
-
+ :host{
+  --bar-background-active: #000000;
+}
 body{
 font-family: "Roboto", sans-serif;;
 }

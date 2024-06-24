@@ -6,10 +6,11 @@
       <ion-col size="12">
         <ion-list>
           <ion-radio-group formControlName="workoutFrequency"  value="workoutForm?.get('workoutFrequency')?.value">
-            <ion-item *ngFor="let days of workoutDatList">
-              <ion-label>{{days.label}}</ion-label>
-              <ion-radio slot="start" [value]="days.value"></ion-radio>
-            </ion-item>
+            <div class="redio-button" *ngFor="let days of workoutDatList">
+               <ion-radio slot="start" [value]="days.value" labelPlacement="end">{{days.label}}</ion-radio>
+
+
+            </div>
           </ion-radio-group>
         </ion-list>
       </ion-col>

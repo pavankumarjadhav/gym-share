@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import OpenAI from 'openai';
 import { sharedModule } from 'src/app/shared/shared.module';
@@ -32,7 +33,7 @@ export class GptPlaygroundComponent {
   ]
   selectedChip:any=[];
   messageText:string='';
-  constructor() {
+  constructor(private router:Router) {
      this.openai = new OpenAI({
       apiKey: environment.chatGpt_key, // This is the default and can be omitted
       dangerouslyAllowBrowser: true
@@ -63,5 +64,8 @@ export class GptPlaygroundComponent {
       this.selectedChip.push(chip)
     }
   }
-
+  backBtnClick()
+  {
+    this.router.navigate(['/workout-plan'])
+  }
 }

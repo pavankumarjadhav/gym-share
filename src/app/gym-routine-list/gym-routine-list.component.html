@@ -1,62 +1,32 @@
-<ion-card>
-  <ion-card-header>
-    <ion-card-subtitle>Month 1</ion-card-subtitle>
-    <ion-card-title>2x per week</ion-card-title>
-  </ion-card-header>
 
-  <ion-card-content>
-    <ion-list>
-      <ion-list-header>
-        <ion-label>Chest and Back</ion-label>
-      </ion-list-header>
+<app-header (backBtnClick)="backBtnClick()" title="Workout Plan" subTitle="" ></app-header>
+  <div class="workout-container">
+    <div class="workout-header">
+      <h2>Month 1</h2>
+      <span class="frequency">2x per week</span>
+    </div>
 
-      <ion-item button>
-        <ion-label>
-          <h2>Bench Press</h2>
-          <p>3 sets · 8-10 reps</p>
-        </ion-label>
-      </ion-item>
+    <div class="section">
+      <div class="section-header">Chest and Back</div>
+      <div class="workout-item" *ngFor="let exercise of chestBackExercises">
+        <div class="display:flex;flex-direction:coloumn">
+          <h2>{{exercise.name}}</h2>
+          <p>{{exercise.sets}} sets · {{exercise.reps}} reps</p>
+        </div>
 
-      <ion-item button>
-        <ion-label>
-          <h2>Bent-over Rows</h2>
-          <p>3 sets · 8-10 reps</p>
-        </ion-label>
-      </ion-item>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
 
-      <ion-item button>
-        <ion-label>
-          <h2>Incline Dumbbell Press</h2>
-          <p>3 sets · 8-10 reps</p>
-        </ion-label>
-      </ion-item>
+    <div class="section">
+      <div class="section-header">Biceps and Triceps</div>
+      <div class="workout-item" *ngFor="let exercise of bicepsTricepsExercises">
+        <div class="display:flex;flex-direction:coloumn">
+          <h2>{{exercise.name}}</h2>
+          <p>{{exercise.sets}} sets · {{exercise.reps}} reps</p>
+        </div>
 
-      <ion-item button>
-        <ion-label>
-          <h2>Lat Pulldown</h2>
-          <p>3 sets · 8-10 reps</p>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-
-    <ion-list>
-      <ion-list-header>
-        <ion-label>Biceps and Triceps</ion-label>
-      </ion-list-header>
-
-      <ion-item button>
-        <ion-label>
-          <h2>Bicep Curls</h2>
-          <p>3 sets · 10-12 reps</p>
-        </ion-label>
-      </ion-item>
-
-      <ion-item button>
-        <ion-label>
-          <h2>Tricep Dips</h2>
-          <p>3 sets · 8-10 reps</p>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-  </ion-card-content>
-</ion-card>
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </div>
+    </div>
+  </div>
