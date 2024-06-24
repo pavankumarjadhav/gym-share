@@ -1,0 +1,48 @@
+
+  <form [formGroup]="workoutForm">
+  <ion-grid>
+
+    <ion-row>
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label position="stacked">Height</ion-label>
+          <ion-grid >
+            <ion-row class="row-grid">
+              <ion-col size="5" class="input-container">
+                <ion-input type="number" formControlName="heightInFit" placeholder="00"></ion-input>
+                <ion-text>ft</ion-text>
+              </ion-col>
+              <ion-col size="5" class="input-container">
+                <ion-input type="number" formControlName="heightInInch" placeholder="00"></ion-input>
+                <ion-text>in</ion-text>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col >
+        <ion-item lines="none">
+          <ion-label position="stacked">Weight</ion-label>
+          <div  class="input-container">
+            <ion-input type="number" formControlName="weight" placeholder="00"></ion-input>
+            <ion-text slot="end">lbs</ion-text>
+          </div>
+
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12">
+        <ion-item lines="none">
+          <ion-label position="stacked">Demographics</ion-label>
+          <ion-input placeholder="Age" style="margin-bottom: 15px;" formControlName="age"></ion-input>
+          <ion-input placeholder="Gender" formControlName="gender"></ion-input>
+
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>

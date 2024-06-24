@@ -1,0 +1,10 @@
+<app-header (backBtnClick)="backBtnClick()" [title]="headerList[selectedQue-1].title" [subTitle]="headerList[selectedQue-1].subTitle" ></app-header>
+
+<container_element [ngSwitch]="selectedQue">
+        <app-que-one [workoutForm]="workoutForm" *ngSwitchDefault></app-que-one>
+        <app-que-two [workoutForm]="workoutForm" *ngSwitchCase="2"></app-que-two>
+        <app-que-three [workoutForm]="workoutForm" *ngSwitchCase="3"></app-que-three>
+        <app-que-four [workoutForm]="workoutForm" *ngSwitchCase="4"></app-que-four>
+</container_element>
+
+<app-footer (nextBtnClick)="nextBtnClick()"  (cancelBtnClick)="cancelBtnClick()"></app-footer>

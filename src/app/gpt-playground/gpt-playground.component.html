@@ -1,0 +1,34 @@
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="auto">
+        <ion-icon name="home-outline" ></ion-icon>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center goals">
+      <ion-chip *ngFor="let chips of optionChips;let i=index" outline="true" (click)="selectChip(chips,i)">
+        <ion-label>{{chips.label}}</ion-label>
+      </ion-chip>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-grid >
+    <ion-row>
+      <ion-col size="10">
+        <ion-item class="message">
+          <ion-input  placeholder="Message" [(ngModel)]="messageText">
+            <ion-button fill="clear" slot="end" aria-label="Show/hide">
+              <ion-icon slot="icon-only" name="mic" aria-hidden="true"></ion-icon>
+            </ion-button>
+          </ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="2">
+        <ion-button shape="circle" fill="solid"  (click)="getGptRes()">
+          <ion-icon name="arrow-up"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
