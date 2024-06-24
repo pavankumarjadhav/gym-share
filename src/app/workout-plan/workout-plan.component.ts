@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-workout-plan',
@@ -24,7 +25,7 @@ export class WorkoutPlanComponent implements OnInit{
     title:'Tell us about your desired intensity level.',
     subTitle:'This information will help us determine specific elements of the workout'
   }]
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:FormBuilder,private router:Router) { }
 
   ngOnInit(): void {
     this.initializeForm()
@@ -44,7 +45,11 @@ export class WorkoutPlanComponent implements OnInit{
   }
   nextBtnClick() {
     console.log(this.workoutForm.value,"this.workoutForm")
-    if (this.selectedQue < 6) {
+    if(this.selectedQue==4)
+      {
+        this.router.navigate(['/gpt']);
+      }
+    if (this.selectedQue < 4) {
       this.selectedQue++
     }
   }

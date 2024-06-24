@@ -46,6 +46,7 @@ export class GptPlaygroundComponent {
   }
 
   async getPromtOutput() {
+    this.router.navigate(['/routine']);
     const params: OpenAI.Chat.ChatCompletionCreateParams = {
       messages: [{ role: 'user', content: this.messageText}],
       model: 'gpt-3.5-turbo',
